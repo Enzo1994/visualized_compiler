@@ -1,0 +1,21 @@
+{
+  "name": "visualizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^8.2.2",
+    "mocha": "^8.4.0"
+  },
+  "dependencies": {
+    "html-prettify": "^1.0.3",
+    "html2canvas": "^1.0.0-rc.7",
+    "konva": "^8.0.1"
+  }
+}

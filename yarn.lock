@@ -162,9 +162,9 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.12.13", "@babel/parser@^7.14.2", "@babel/parser@^7.14.3":
+"@babel/parser@^7.12.0", "@babel/parser@^7.12.13", "@babel/parser@^7.14.2", "@babel/parser@^7.14.3":
   version "7.14.3"
-  resolved "https://registry.nlark.com/@babel/parser/download/@babel/parser-7.14.3.tgz?cache=0&sync_timestamp=1621288138326&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fparser%2Fdownload%2F%40babel%2Fparser-7.14.3.tgz#9b530eecb071fd0c93519df25c5ff9f14759f298"
+  resolved "https://registry.nlark.com/@babel/parser/download/@babel/parser-7.14.3.tgz#9b530eecb071fd0c93519df25c5ff9f14759f298"
   integrity sha1-m1MO7LBx/QyTUZ3yXF/58UdZ8pg=
 
 "@babel/plugin-transform-react-jsx-self@^7.12.13":
@@ -204,13 +204,18 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/types@^7.12.13", "@babel/types@^7.13.12", "@babel/types@^7.14.0", "@babel/types@^7.14.2":
+"@babel/types@^7.12.0", "@babel/types@^7.12.13", "@babel/types@^7.13.12", "@babel/types@^7.14.0", "@babel/types@^7.14.2":
   version "7.14.2"
-  resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.14.2.tgz?cache=0&sync_timestamp=1620840968754&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.14.2.tgz#4208ae003107ef8a057ea8333e56eb64d2f6a2c3"
+  resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.14.2.tgz?cache=0&sync_timestamp=1620839476067&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.14.2.tgz#4208ae003107ef8a057ea8333e56eb64d2f6a2c3"
   integrity sha1-QgiuADEH74oFfqgzPlbrZNL2osM=
   dependencies:
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
+
+"@types/node@^15.3.0":
+  version "15.3.1"
+  resolved "https://registry.nlark.com/@types/node/download/@types/node-15.3.1.tgz#23a06b87eedb524016616e886b116b8fdcb180af"
+  integrity sha1-I6Brh+7bUkAWYW6IaxFrj9yxgK8=
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -247,6 +252,22 @@
     "@babel/plugin-transform-react-jsx-self" "^7.12.13"
     "@babel/plugin-transform-react-jsx-source" "^7.12.13"
     react-refresh "^0.9.0"
+
+"@vue/compiler-core@^3.0.11":
+  version "3.0.11"
+  resolved "https://registry.nlark.com/@vue/compiler-core/download/@vue/compiler-core-3.0.11.tgz#5ef579e46d7b336b8735228758d1c2c505aae69a"
+  integrity sha1-XvV55G17M2uHNSKHWNHCxQWq5po=
+  dependencies:
+    "@babel/parser" "^7.12.0"
+    "@babel/types" "^7.12.0"
+    "@vue/shared" "3.0.11"
+    estree-walker "^2.0.1"
+    source-map "^0.6.1"
+
+"@vue/shared@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.0.11.tgz#20d22dd0da7d358bb21c17f9bde8628152642c77"
+  integrity sha1-INIt0Np9NYuyHBf5vehigVJkLHc=
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -335,6 +356,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/escape-string-regexp/download/escape-string-regexp-1.0.5.tgz?cache=0&sync_timestamp=1618677179364&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fescape-string-regexp%2Fdownload%2Fescape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+
+estree-walker@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/estree-walker/download/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
+  integrity sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=
 
 fsevents@~2.3.1:
   version "2.3.2"
