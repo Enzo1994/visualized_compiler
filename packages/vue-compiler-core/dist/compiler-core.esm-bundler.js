@@ -1105,21 +1105,22 @@ async function parseAttributeValue(context) {
     return { content, isQuoted, loc: getSelection(context, start) };
 }
 async function parseInterpolation(context, mode) {
-    const [open, close] = context.options.delimiters;
-    const closeIndex = context.source.indexOf(close, open.length);
+    const [open, close] = context.options.delimiters; // options里传入的分隔符(默认"{{}}")
+    const closeIndex = context.source/*全程被编译的字符串*/.indexOf(close/*分隔符结束部分*/, open.length/* 分隔符开始部分的长度位置*/); // 分隔符开始部分的长度为起点查找分隔符结尾的索引位置    
     if (closeIndex === -1) {
         emitError(context, 25 /* X_MISSING_INTERPOLATION_END */);
         return undefined;
     }
-    const start = getCursor(context);
-    await advanceBy(context, open.length);
-    const innerStart = getCursor(context);
-    const innerEnd = getCursor(context);
-    const rawContentLength = closeIndex - open.length;
-    const rawContent = context.source.slice(0, rawContentLength);
-    const preTrimContent = await parseTextData(context, rawContentLength, mode);
-    const content = preTrimContent.trim();
-    const startOffset = preTrimContent.indexOf(content);
+    const start = getCursor(context); // 初始上下文信息记录
+    await advanceBy(context, open.length); // 先前进分隔符开始部分的长度
+    const innerStart = getCursor(context); // 获取分隔符内部包裹内容开始点
+    const innerEnd = getCursor(context); // 获取分隔符内部包裹内容结束点的context
+    const rawContentLength = closeIndex - open.length; // 分隔符包裹部分完整长度
+    const rawContent = context.source.slice(0, rawContentLength); // 截取被分割符包裹的部分
+    const preTrimContent = await parseTextData(context, rawContentLength, mode); // 取出文字内容，如果内部有写了的html实体(仅包括&gt;&lt;&amp;&apos;&quot;)，则会转换为对应符号
+    console.log('preTrimContent', preTrimContent) // 比如:{{&gt;abc&lt;}},会被转换为 {{<abc>}}
+    const content = preTrimContent.trim(); // 空白掐头去尾
+    const startOffset = preTrimContent.indexOf(content); 
     if (startOffset > 0) {
         advancePositionWithMutation(innerStart, rawContent, startOffset);
     }
